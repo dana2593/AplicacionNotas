@@ -5,16 +5,17 @@
              Title="Mis Notas">
 
     <StackLayout Margin="20,35,20,20">
-        <Label Text="Agregar/Modificar Nota:" />
+        <Label Text="Agregar Nota:" />
         <Entry x:Name="entryTexto" Placeholder="Escribe tu nota aquí" />
-        <StackLayout Orientation="Horizontal" Spacing="10">
-            <Button Text="Agregar Nota" Clicked="OnAgregarNotaClicked" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" />
-            <Button Text="Modificar" Clicked="OnModificarNotaClicked" BackgroundColor="Orange" TextColor="White" HorizontalOptions="FillAndExpand" />
-        </StackLayout>
+        <Button Text="Agregar Nota" Clicked="OnAgregarNotaClicked" BackgroundColor="Green" TextColor="White" />
 
-        <Label Text="Todas las Notas:" Margin="0,20,0,0" />
+        <Label Text="Ver Notas:" Margin="0,20,0,0" />
         <Button Text="Obtener Todas las Notas" Clicked="OnObtenerNotasClicked" />
 
+        <!-- Botón modificar - inicialmente oculto -->
+        <Button x:Name="botonModificar" Text="Modificar Nota Seleccionada" Clicked="OnModificarNotaClicked" BackgroundColor="Orange" TextColor="White" Margin="0,10,0,0" />
+
+        <!-- Lista de notas - inicialmente oculta -->
         <ListView x:Name="listViewNotas" Margin="0,20,0,0" ItemSelected="OnNotaSeleccionada">
             <ListView.ItemTemplate>
                 <DataTemplate>
